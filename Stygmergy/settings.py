@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'Usuario',
     'calificacion', 
     'producto', 
-    'restaurante'. 
+    'restaurante', 
     'comprador'
 ]
 

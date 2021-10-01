@@ -13,5 +13,5 @@ class Producto(models.Model):
 	informacion=models.CharField(max_length=150)
 
 	def __str__(self):
-        return '%s %s' % (self.nombre, self.precio)
-        return '{}'.format(self.informacion)
+		return '%s %s' % (self.nombre, self.precio)
+		return '{}'.format(self.informacion)

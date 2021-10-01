@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'dron',
     'Hub',
     'Usuario',
+    'calificacion', 
+    'producto', 
+    'restaurante'. 
+    'comprador'
 ]
 
 MIDDLEWARE = [

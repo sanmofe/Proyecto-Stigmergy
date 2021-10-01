@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
-from .logic import logic_resturante
+from .logic import logic_restaurante
 
 # Create your views here.
 def get_resturantes(request):

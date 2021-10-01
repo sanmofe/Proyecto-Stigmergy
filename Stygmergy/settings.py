@@ -40,10 +40,11 @@ INSTALLED_APPS = [
     'dron',
     'Hub',
     'Usuario',
-    'calificacion', 
-    'producto', 
-    'restaurante', 
-    'comprador'
+    'calificacion',
+    'producto',
+    'restaurante',
+    'comprador',
+    'Pedido'
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,8 @@ ROOT_URLCONF = 'Stygmergy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),
+                 os.path.join(BASE_DIR,'pedido/templates/pedido')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,8 +84,13 @@ WSGI_APPLICATION = 'Stygmergy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'stygmergy',
+        'USER': 'miguel',
+        'PASSWORD': 'MiguelAcosta25',
+        'HOST': 'localhost',
+        'PORT': '5432'
+
     }
 }
 

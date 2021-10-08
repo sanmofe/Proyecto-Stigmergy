@@ -37,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pedido.apps.pedidoConfig',
     'dron',
     'Hub',
     'Usuario',
     'calificacion',
     'producto',
     'restaurante',
-    'comprador',
-    'Pedido'
+    'comprador'
 ]
 
 MIDDLEWARE = [
@@ -87,10 +87,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'stygmergy',
         'USER': 'miguel',
-        'PASSWORD': 'MiguelAcosta25',
+        'PASSWORD': '12345',
         'HOST': 'localhost',
-        'PORT': '5432'
-
+        'PORT': ''
     }
 }
 

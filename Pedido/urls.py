@@ -9,5 +9,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('list/',views.list_pedido,name='list_measurements')
+    path('list/',views.list_pedido,name='list_pedido')
 ]

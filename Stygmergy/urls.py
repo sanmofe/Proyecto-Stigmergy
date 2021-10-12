@@ -24,5 +24,8 @@ urlpatterns = [
     path('comprador/', include('comprador.urls')),
     path('producto/', include('producto.urls')),
     path('restaurante/', include('restaurante.urls')),
-    path('pedido/', include('pedido.urls'))
+    path('pedido/', include('pedido.urls')),
+    path('dron/', include('dron.urls')),
+    path('hub/', include('hub.urls')),
+    path('usuario/', include('usuario.urls'))
 ]

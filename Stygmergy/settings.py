@@ -37,14 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pedido.apps.pedidoConfig',
-    'dron',
-    'Hub',
-    'Usuario',
-    'calificacion',
-    'producto',
-    'restaurante',
-    'comprador'
+    'pedido.apps.PedidoConfig',
+    'dron.apps.DronConfig',
+    'hub.apps.HubConfig',
+    'usuario.apps.UsuarioConfig',
+    'calificacion.apps.CalificacionConfig',
+    'producto.apps.ProductoConfig',
+    'restaurante.apps.RestauranteConfig',
+    'comprador.apps.CompradorConfig',
 ]
 
 MIDDLEWARE = [

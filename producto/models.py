@@ -10,7 +10,7 @@ class Producto(models.Model):
 		self.arg = arg
 	"""
 	restaurante = models.ForeignKey(Restaurante, on_delete= models.CASCADE, default= None)
-	pedido= models.ForeignKey(Pedido, on_delete= models.CASCADE, default= None)
+	pedido= models.ForeignKey(Pedido, on_delete= models.CASCADE, default= None, null= True, blank=True)
 	nombre =models.CharField(max_length=50)
 	precio =models.FloatField(null= True, blank=True, default=None)
 	informacion=models.CharField(max_length=150)

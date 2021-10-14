@@ -14,6 +14,6 @@ class Restaurante(models.Model):
 	direccion=models.CharField(max_length=50)
 
 	def __str__(self):
-		return '%s %s' % (self.direccions, self.cuenta)
+		return '%s %s' % (self.direccion, self.cuenta)
 		return '{}'.format(self.nombre)
 

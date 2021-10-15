@@ -7,10 +7,10 @@ from django.core import serializers
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 import json
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-@csrf_protect
+@csrf_exempt
 def create_pedido(request):
     if request.method == 'POST':
         form = PedidoForm(request.POST)

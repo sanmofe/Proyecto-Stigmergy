@@ -27,4 +27,4 @@ class Pedido(models.Model):
     )
 
     def __str__(self):
-        return '%s %s' % (self.estado, self.dateTime, self.direccion)
+        return '%s %s %s' % (self.estado, self.dateTime, self.direccion)

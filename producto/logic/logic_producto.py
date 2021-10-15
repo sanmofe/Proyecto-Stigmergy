@@ -1,11 +1,11 @@
 from ..models import Producto
 
 def get_all_productos():
-    productos = producto.objects.all()
+    productos = Producto.objects.all()
     return productos
 
 def get_producto(identificador: int):
-    producto= producto.objects.filter(pk= identificador)
+    producto= Producto.objects.filter(pk= identificador)
     return producto
 
 def delete_producto(identificador: int):

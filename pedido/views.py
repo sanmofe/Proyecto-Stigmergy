@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.urls import reverse
 from .models import *
 from .forms import PedidoForm
 from .logic import logic_pedido
@@ -7,16 +7,16 @@ from django.core import serializers
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 import json
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-
+@csrf_exempt
 def create_pedido(request):
     if request.method == 'POST':
         form = PedidoForm(request.POST)
         if form.is_valid():
             logic_pedido.create_pedido(form)
             messages.add_message(request, messages.SUCCESS, 'Pedido creado exitosamente')
-            return HttpResponseRedirect(reverse('pedidoCreate'))
         else:
             print(form.errors)
     else:

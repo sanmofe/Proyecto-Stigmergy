@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width-device-width, initial-scale=1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+    <link rel="stylesheet" href="EstiloListaProducto.css" />
+    <title>Productos disponibles</title>
+</head>
+
+<body>
+<h1> Lista de productos</h1>
+<div id="notebooks" >
+  <ul id="notebook_ul" >
+    {% for producto in productos %}
+    <li  >
+      id: {{producto.pk}}
+      name: {{producto.fields.nombre}}
+    </li>
+  <select >
+     {% for pedido in pedidos %}
+    <option value="name">{{pedido.pk}}</option>
+     {% endfor %}
+  </select>
+     {% endfor %}
+  </ul>
+  <button>Enviar</button>
+</div>
+</body>
+
+</html>
+
+

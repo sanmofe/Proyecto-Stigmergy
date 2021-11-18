@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'producto.apps.ProductoConfig',
     'restaurante.apps.RestauranteConfig',
     'comprador.apps.CompradorConfig',
+    'social_django',
 ]
 
 MIDDLEWARE = [

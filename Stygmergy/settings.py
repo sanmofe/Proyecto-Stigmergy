@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'Stygmergy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'stygmergy',
-        'USER': 'miguel',
-        'PASSWORD': '12345',
-        'HOST': '172.24.98.143',
+        'NAME': 'Stigmergy',
+        'USER': 'estudiante',
+        'PASSWORD': '12345678',
+        'HOST': 'stigmergy.ccdtnafwaca9.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -144,7 +144,7 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
  'openid',
  'profile',
  'email',
- ‘role’,
+ 'role',
 ]
 AUTHENTICATION_BACKENDS = {
  'monitoring.auth0backend.Auth0',

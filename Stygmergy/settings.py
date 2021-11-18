@@ -25,7 +25,7 @@ SECRET_KEY = 'dfsrjeh@now%$98_629moo2c#g7ni6*5j$my9n2a$0e+mg!ohn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['backend','172.24.98.145', '172.24.98.144', '172.24.98.143', '172.24.98.142','localhost']
+ALLOWED_HOSTS = ['backend','172.24.98.145', '172.24.98.144', '172.24.98.143', '172.24.98.142','localhost', '18.206.119.214']
 
 
 # Application definition

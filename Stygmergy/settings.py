@@ -131,3 +131,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = "/login/auth0"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "https://stygmergy.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F3.84.62.197:8000"
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes
+SOCIAL_AUTH_AUTH0_DOMAIN = 'stygmergy.us.auth0.com'
+SOCIAL_AUTH_AUTH0_KEY = '2UZnWmXVJw223aDoDZJ7VJHZOVVwldlp'
+SOCIAL_AUTH_AUTH0_SECRET = 'VAvdgBZceliCTO7gR4LNcpVaJgFPbnyz5R98zRSaitpXn3OWMML7Owua6lsbdguC'
+SOCIAL_AUTH_AUTH0_SCOPE = [
+ 'openid',
+ 'profile',
+ 'email',
+ ‘role’,
+]
+AUTHENTICATION_BACKENDS = {
+ 'monitoring.auth0backend.Auth0',
+ 'django.contrib.auth.backends.ModelBackend',
+}

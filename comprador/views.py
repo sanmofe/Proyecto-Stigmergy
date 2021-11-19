@@ -4,6 +4,7 @@ from django.core import serializers
 from .logic import logic_comprador
 from .forms import CompradorForm
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def get_compradores(request):

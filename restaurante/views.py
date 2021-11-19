@@ -6,6 +6,8 @@ from .logic import logic_restaurante
 from django.contrib import messages
 from .forms import RestauranteForm
 from .auth0_backend import getRole
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def get_resturantes(request):
@@ -23,7 +25,7 @@ def delete_resturante(request, id):
     resturante_rta= serializers.serialize('json', resturante)
     return HttpResponse(resturante_rta, content_type='application/json')
 
-
+@csrf_exempt
 def create_restaurante(request, id):
     if request.method == 'POST':
         form = RestauranteForm(request.POST)

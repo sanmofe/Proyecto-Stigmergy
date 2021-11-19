@@ -42,5 +42,6 @@ def getRole(request):
     headers = {'authorization': 'Bearer ' + accessToken}
     resp = requests.get(url, headers=headers)
     userinfo = resp.json()
+    print(userinfo)
     role = userinfo['https://stygmergy.com/role']
     return (role)

@@ -12,3 +12,8 @@ def delete_restaurante(identificador: int):
     restaurante= get_restaurante(identificador)
     restaurante.delete()
     return restaurante
+
+def create_pedido(form):
+    pedido = form.save()
+    pedido.save()
+    return()

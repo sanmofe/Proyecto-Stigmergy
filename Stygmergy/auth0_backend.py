@@ -44,8 +44,6 @@ def getRole(request):
     resp = requests.get(url, headers=headers)
     userinfo = resp.json()
     print(userinfo)
-    try:
-        role = userinfo['https://stygmergy.com/role']
-    except:
-        return HttpResponse("shaduyhsayudha")
+    role = userinfo['https://stygmergy:us:auth0:com/role']
+    
     return (role)

@@ -41,7 +41,7 @@ def create_restaurante(request):
         
 @login_required
 def restaurante_create(request):
-    role = getRole
+    role = getRole()
     if role == "restaurante" or role == "admin":
         if request.method == 'POST':
             form = RestauranteForm(request.POST)

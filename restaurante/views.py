@@ -1,9 +1,11 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from django.core import serializers
 from .logic import logic_restaurante
 from django.contrib import messages
 from .forms import RestauranteForm
+from .auth0_backend import getRole
 
 # Create your views here.
 def get_resturantes(request):
@@ -34,4 +36,24 @@ def create_restaurante(request, id):
         form = RestauranteForm()
     return render(request, 'create_pedido.html', {'form':form})
         
+@login_required
+def restaurante_create():
+    role = getRole
+    if role == "restaurante" or role == "admin":
+        if request.method == 'POST':
+            form = RestauranteForm(request.POST)
+            if form.is_valid():
+                create_restaurante(form)
+                messages.add_message(request, messages.SUCCESS, 'Succesfully created a restaurant')
+                return HttpResponseRedirect(reverse('restauranteCreate'))
+            else:
+                print(form.errors)
+        else:
+            form = RestauranteForm()
         
+        context = {
+            'form' : form,
+        }
+        return render(request, 'restaurante/list', context)
+    else:
+        return HttpResponse("Unauthorized User")

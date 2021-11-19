@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 import requests
 
 from social_core.backends.oauth import BaseOAuth2
@@ -42,5 +43,7 @@ def getRole(request):
     headers = {'authorization': 'Bearer ' + accessToken}
     resp = requests.get(url, headers=headers)
     userinfo = resp.json()
-    role = userinfo['https://stygmergy.us.auth0.com/role']
+    print(userinfo)
+    role = userinfo['https://stygmergy:us:auth0:com/role']
+    
     return (role)

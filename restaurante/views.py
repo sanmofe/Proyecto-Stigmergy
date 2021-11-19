@@ -57,6 +57,6 @@ def restaurante_create(request):
         context = {
             'form' : form,
         }
-        return render(request, 'restaurante/list', context)
+        return render(request, 'templates/restaurante.html', context)
     else:
         return HttpResponse("Unauthorized User")

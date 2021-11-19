@@ -27,7 +27,7 @@ def delete_resturante(request, id):
     return HttpResponse(resturante_rta, content_type='application/json')
 
 @csrf_exempt
-def create_restaurante(request, id):
+def create_restaurante(request):
     if request.method == 'POST':
         form = RestauranteForm(request.POST)
         if form.is_valid():

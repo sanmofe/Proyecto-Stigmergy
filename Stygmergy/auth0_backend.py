@@ -34,13 +34,13 @@ class Auth0(BaseOAuth2):
             'picture': userinfo['picture'],
             'user_id': userinfo['sub']}
 
-    def getRole(request):
-        user = request.user
-        auth0user = user.social_auth.get(provider="auth0")
-        accessToken = auth0user.extra_data['access_token']
-        url = "https://stygmergy.us.auth0.com/userinfo"
-        headers = {'authorization': 'Bearer ' + accessToken}
-        resp = requests.get(url, headers=headers)
-        userinfo = resp.json()
-        role = userinfo['https://stygmergy.us.auth0.com/role']
-        return (role)
+def getRole(request):
+    user = request.user
+    auth0user = user.social_auth.get(provider="auth0")
+    accessToken = auth0user.extra_data['access_token']
+    url = "https://stygmergy.us.auth0.com/userinfo"
+    headers = {'authorization': 'Bearer ' + accessToken}
+    resp = requests.get(url, headers=headers)
+    userinfo = resp.json()
+    role = userinfo['https://stygmergy.us.auth0.com/role']
+    return (role)

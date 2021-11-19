@@ -40,7 +40,7 @@ def create_restaurante(request):
     return render(request, 'create_pedido.html', {'form':form})
         
 @login_required
-def restaurante_create():
+def restaurante_create(request):
     role = getRole
     if role == "restaurante" or role == "admin":
         if request.method == 'POST':

@@ -5,8 +5,8 @@ from restaurante.models import Restaurante
 
 class Hub(models.Model):
     restaurante = models.ForeignKey(Restaurante, on_delete= models.CASCADE, default= None)
-    direcccion = models.CharField(max_length=150)
+    direccion = models.CharField(max_length=150)
 
 
     def __str__(self):
-        return '%s' % (self.direcccion)
+        return '%s' % (self.direccion)

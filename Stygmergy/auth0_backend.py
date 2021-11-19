@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 import requests
 
 from social_core.backends.oauth import BaseOAuth2
@@ -43,5 +44,8 @@ def getRole(request):
     resp = requests.get(url, headers=headers)
     userinfo = resp.json()
     print(userinfo)
-    role = userinfo['https://stygmergy.com/role']
+    try:
+        role = userinfo['https://stygmergy.com/role']
+    except:
+        return HttpResponse("shaduyhsayudha")
     return (role)

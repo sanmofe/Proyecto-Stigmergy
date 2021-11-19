@@ -12,3 +12,8 @@ def delete_comprador(identificador: int):
     comprador= get_comprador(identificador)
     comprador.delete()
     return comprador
+
+def create_comprador(form):
+    comprador = form.save()
+    comprador.save()
+    return()

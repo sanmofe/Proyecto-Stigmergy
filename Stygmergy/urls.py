@@ -26,7 +26,7 @@ urlpatterns = [
     path('restaurante/', include('restaurante.urls')),
     path('pedido/', include('pedido.urls')),
     #path('dron/', include('dron.urls')),
-    #path('hub/', include('hub.urls')),
+    path('hub/', include('hub.urls')),
     #path('usuario/', include('usuario.urls'))
     path(r'', include('django.contrib.auth.urls')),
     path(r'', include('social_django.urls')),

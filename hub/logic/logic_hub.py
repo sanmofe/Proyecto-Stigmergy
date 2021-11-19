@@ -12,3 +12,8 @@ def delete_hub(identificador: int):
     hubDel= get_hub(identificador)
     hubDel.delete()
     return hubDel
+
+def create_hub(form):
+    hub = form.save()
+    hub.save()
+    return()

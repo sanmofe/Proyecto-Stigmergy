@@ -19,3 +19,8 @@ def create_pedido(form):
     pedido = form.save()
     pedido.save()
     return()
+
+def update_pedido(identificador: int, newState):
+    pedido= Pedido.objects.get(id = identificador)
+    pedido.update(newState)
+    return pedido

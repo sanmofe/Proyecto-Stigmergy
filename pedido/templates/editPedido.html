@@ -1,0 +1,7 @@
+{% extends "create_pedido.html" %}
+{%block titulo%} Cambia el estado del pedido {% endblock titulo %}
+{% block titulo1 %}Cambio de estado {% endblock titulo1 %}
+{% block formulario%}
+{{ form.as_p }}
+    <button type = "submit">Aceptar</button>
+{% endblock formulario%}

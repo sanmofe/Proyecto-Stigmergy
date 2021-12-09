@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import *
 from .forms import PedidoForm
+from .forms import PedidoForm   
 from .logic import logic_pedido
 from django.core import serializers
 from django.contrib import messages
@@ -29,3 +30,14 @@ def list_pedido(request):
     pedido_list = serializers.serialize('json',pedidos)
     pedido_list = json.loads(pedido_list)
     return render(request, 'list_pedido.html', {'pedidos':pedido_list})
+
+def update_estadoPedido(request, id):
+    pedido = Pedido.objects.get(id = id)
+    if request.method == 'GET':
+        form = PedidoForm(instance = pedido)
+    else: 
+        form = PedidoForm(request.POST, instance = pedido)
+        form.save()
+        return redirect('list_pedido')
+
+    return render(request, 'editPedido.html', {'form':form})

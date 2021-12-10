@@ -1,4 +1,7 @@
 # Python Django
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
 # Test a Django project on multiple versions of Python.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python

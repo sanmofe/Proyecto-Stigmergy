@@ -1,7 +1,5 @@
 # Python Django
-- task: SonarQubePublish@5
-  inputs:
-    pollingTimeoutSec: '300'
+
 # Test a Django project on multiple versions of Python.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
@@ -54,6 +52,9 @@ steps:
     python manage.py test --testrunner xmlrunner.extra.djangotestrunner.XMLTestRunner --no-input
   displayName: 'Run tests'
 
+- task: SonarQubePublish@5
+  inputs:
+    pollingTimeoutSec: '300'
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: "**/TEST-*.xml"
